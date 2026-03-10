@@ -1,7 +1,5 @@
-import Home from '@/screens/Home';
+import { Navigation } from '@/routes/stack.routes';
 import { Roboto_200ExtraLight, Roboto_400Regular, Roboto_900Black, useFonts } from '@expo-google-fonts/roboto';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -13,5 +11,5 @@ export default function App() {
     return null
   }
 
-  return <Home/>;
+  return <Navigation/>
 }

@@ -3,10 +3,16 @@ import { Image, Linking, Platform, Text, View } from "react-native";
 import { styles } from "./styles";
 import { Button } from "@/components/Button";
 import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation } from "@react-navigation/native";
 
 
 
 export default function Home() {
+    const navigation = useNavigation<any>()
+    function goToSpecialities(){
+        navigation.navigate("Specialities")
+    }
+
     function goToLink(url:string){
         let diretorio = url
         Linking.openURL(diretorio)
@@ -45,7 +51,7 @@ export default function Home() {
             <Button title="Github" name="github" onPress={() => goToLink("https://github.com/xCaio")}/>
             <Button title="Linkedin" name="linkedin" onPress={()=>goToLink("https://www.linkedin.com/in/ucaio/")}/>
             <Button title="Instagram" name="instagram" onPress={()=> goToLink("https://instagram.com/pdccaio")}/>
-            <Button title="Specialties" name="desktop"/>
+            <Button title="Specialties" name="desktop" onPress={goToSpecialities}/>
         </View>
 
 
